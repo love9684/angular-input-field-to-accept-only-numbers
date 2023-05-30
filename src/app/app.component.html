@@ -1,0 +1,43 @@
+<h3>Template Driven Form</h3>
+<!-- <form #form="ngForm">
+  <input
+    name="number"
+    type="text"
+    onlyNumber
+    decimals="2"
+    [(ngModel)]="number"
+  />
+  <p>model value: {{ number }}</p>
+  <p>form dirty: {{ form.dirty }}</p>
+</form> -->
+
+<h3>Reactive Form</h3>
+<form [formGroup]="formGroup">
+  <div>Integer: <input formControlName="integer" type="text" onlyNumber /></div>
+  <div>
+    Integer With Negative:
+    <input
+      formControlName="integerWithNegative"
+      type="text"
+      onlyNumber
+      [allowNegative]="true"
+    />
+  </div>
+  <div>
+    Decimal:
+    <input formControlName="decimal" type="text" onlyNumber decimals="2" />
+  </div>
+  <div>
+    Decimal With Negative:
+    <input
+      formControlName="decimalWithNegative"
+      type="text"
+      onlyNumber
+      decimals="2"
+      [allowNegative]="true"
+    />
+  </div>
+  <!-- <p>model value: {{ formGroup.get('number').value }}</p>
+  <p>form dirty: {{ formGroup.dirty }}</p>
+  <p (click)="onClick()">form touched: {{ formGroup.touched }}</p> -->
+</form>
